@@ -2,6 +2,9 @@
 
 ![Terrain Refreshed](docs/banner.png)
 
+[![Latest release](https://img.shields.io/github/v/release/ItsMeRevID/Terrain-Refreshed?label=release)](https://github.com/ItsMeRevID/Terrain-Refreshed/releases/latest)
+[![Build](https://github.com/ItsMeRevID/Terrain-Refreshed/actions/workflows/build.yml/badge.svg)](https://github.com/ItsMeRevID/Terrain-Refreshed/actions/workflows/build.yml)
+
 A Fabric mod that overhauls Minecraft's world generation: realistic terrain shaping, dramatic
 mountains, flowing streams and rivers, 100 new biomes with hand-tuned colours, natural vegetation
 and organically grown fancy trees.
@@ -130,6 +133,20 @@ from one that merely happened to sit far from that particular spawn point.
 Against a running server that already force-loads `-64 -64 64 64`, the silhouette probe can be
 re-run on its own: `python tools/smoke_trees.py 127.0.0.1 25575 <rcon-password>`. It clears each
 probe column before planting, so it is repeatable.
+
+## Releases
+
+Every push to `main` is rebuilt by GitHub Actions, so the repository always carries the current
+build. To ship a new version, change `version=` in `gradle.properties` and push: the tag, the
+release title and the attached jar follow that file.
+
+| Workflow | What it does |
+|---|---|
+| `build.yml` | builds the mod on every push and pull request and stores the jars as a workflow artifact |
+| `release.yml` | builds on `main`, then creates or refreshes the release of the current version and replaces the attached jar |
+
+The jar of the newest build is always at
+<https://github.com/ItsMeRevID/Terrain-Refreshed/releases/latest>.
 
 ## License
 
