@@ -13,7 +13,7 @@ and organically grown fancy trees.
 |---|---|
 | Author | RevSkyMC |
 | Package | `net.revskymc.terrainrefreshed` |
-| Minecraft | 1.21 - 26.3 |
+| Minecraft | 26.3 |
 | Loader | Fabric 0.20.1 |
 | Fabric API | 0.165.2+26.3 |
 | License | MIT |
