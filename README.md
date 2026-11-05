@@ -144,9 +144,21 @@ release title and the attached jar follow that file.
 |---|---|
 | `build.yml` | builds the mod on every push and pull request and stores the jars as a workflow artifact |
 | `release.yml` | builds on `main`, then creates or refreshes the release of the current version and replaces the attached jar |
+| `modrinth.yml` | uploads the jar to Modrinth; the release workflow dispatches it right after the GitHub release is published |
 
 The jar of the newest build is always at
 <https://github.com/ItsMeRevID/Terrain-Refreshed/releases/latest>.
+
+Publishing on Modrinth needs three things, once:
+
+1. create the project page at <https://modrinth.com/mod/terrain-refreshed>
+2. create an access token with the `write:versions` scope
+3. add the token as the repository secret `MODRINTH_TOKEN` and the project slug as the
+   repository variable `MODRINTH_PROJECT_ID`
+
+Until the token is there, the Modrinth workflow reports that it skipped and the rest of the
+pipeline stays green. `MODRINTH_GAME_VERSIONS` overrides the Minecraft versions the release
+claims and defaults to `["26.3"]`.
 
 ## License
 
