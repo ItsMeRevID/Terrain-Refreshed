@@ -1,0 +1,31 @@
+{
+  "left": {
+    "left": "terrainrefreshed:detail_noise",
+    "right": {
+      "spline": {
+        "coordinate": "minecraft:overworld/erosion",
+        "points": [
+          {
+            "derivative": 0.0,
+            "location": -1.0,
+            "value": 1.0
+          },
+          {
+            "derivative": 0.0,
+            "location": 0.0,
+            "value": 0.55
+          },
+          {
+            "derivative": 0.0,
+            "location": 1.0,
+            "value": 0.3
+          }
+        ]
+      },
+      "type": "minecraft:spline"
+    },
+    "type": "minecraft:mul"
+  },
+  "right": 0.55,
+  "type": "minecraft:mul"
+}

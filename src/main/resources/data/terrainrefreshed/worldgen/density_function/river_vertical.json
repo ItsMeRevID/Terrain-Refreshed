@@ -1,0 +1,19 @@
+{
+  "left": {
+    "axis": "y",
+    "from_coordinate": 44,
+    "from_value": 0.0,
+    "to_coordinate": 58,
+    "to_value": 1.0,
+    "type": "minecraft:gradient"
+  },
+  "right": {
+    "axis": "y",
+    "from_coordinate": 104,
+    "from_value": 1.0,
+    "to_coordinate": 148,
+    "to_value": 0.0,
+    "type": "minecraft:gradient"
+  },
+  "type": "minecraft:mul"
+}

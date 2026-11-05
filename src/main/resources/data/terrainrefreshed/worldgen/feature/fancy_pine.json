@@ -1,0 +1,22 @@
+{
+  "branch_chance": 0.75,
+  "canopy_radius": 4,
+  "form": "pine",
+  "leaves": {
+    "id": "minecraft:spruce_leaves",
+    "properties": {
+      "distance": "7",
+      "persistent": "false",
+      "waterlogged": "false"
+    }
+  },
+  "max_height": 22,
+  "min_height": 14,
+  "trunk": {
+    "id": "minecraft:spruce_log",
+    "properties": {
+      "axis": "y"
+    }
+  },
+  "type": "terrainrefreshed:fancy_tree"
+}

@@ -1,0 +1,22 @@
+{
+  "branch_chance": 0.7,
+  "canopy_radius": 3,
+  "form": "spreading",
+  "leaves": {
+    "id": "minecraft:birch_leaves",
+    "properties": {
+      "distance": "7",
+      "persistent": "false",
+      "waterlogged": "false"
+    }
+  },
+  "max_height": 9,
+  "min_height": 6,
+  "trunk": {
+    "id": "minecraft:birch_log",
+    "properties": {
+      "axis": "y"
+    }
+  },
+  "type": "terrainrefreshed:fancy_tree"
+}

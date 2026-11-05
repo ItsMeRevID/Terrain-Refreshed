@@ -1,0 +1,22 @@
+{
+  "branch_chance": 0.65,
+  "canopy_radius": 4,
+  "form": "weeping",
+  "leaves": {
+    "id": "minecraft:dark_oak_leaves",
+    "properties": {
+      "distance": "7",
+      "persistent": "false",
+      "waterlogged": "false"
+    }
+  },
+  "max_height": 13,
+  "min_height": 8,
+  "trunk": {
+    "id": "minecraft:dark_oak_log",
+    "properties": {
+      "axis": "y"
+    }
+  },
+  "type": "terrainrefreshed:fancy_tree"
+}

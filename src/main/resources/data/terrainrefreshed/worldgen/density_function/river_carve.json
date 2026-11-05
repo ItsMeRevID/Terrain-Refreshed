@@ -1,0 +1,9 @@
+{
+  "left": "terrainrefreshed:river_channel",
+  "right": {
+    "left": "terrainrefreshed:river_vertical",
+    "right": -1.15,
+    "type": "minecraft:mul"
+  },
+  "type": "minecraft:mul"
+}

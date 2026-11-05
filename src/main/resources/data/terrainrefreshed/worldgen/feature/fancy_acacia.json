@@ -1,0 +1,22 @@
+{
+  "branch_chance": 0.8,
+  "canopy_radius": 4,
+  "form": "umbrella",
+  "leaves": {
+    "id": "minecraft:acacia_leaves",
+    "properties": {
+      "distance": "7",
+      "persistent": "false",
+      "waterlogged": "false"
+    }
+  },
+  "max_height": 9,
+  "min_height": 6,
+  "trunk": {
+    "id": "minecraft:acacia_log",
+    "properties": {
+      "axis": "y"
+    }
+  },
+  "type": "terrainrefreshed:fancy_tree"
+}

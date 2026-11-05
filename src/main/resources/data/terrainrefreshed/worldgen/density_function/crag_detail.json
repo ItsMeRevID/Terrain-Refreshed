@@ -1,0 +1,9 @@
+{
+  "left": {
+    "left": "terrainrefreshed:mountain_mask",
+    "right": "terrainrefreshed:crag_noise",
+    "type": "minecraft:mul"
+  },
+  "right": 0.75,
+  "type": "minecraft:mul"
+}

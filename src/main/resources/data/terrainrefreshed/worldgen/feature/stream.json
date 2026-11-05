@@ -1,0 +1,15 @@
+{
+  "bed": {
+    "id": "minecraft:gravel"
+  },
+  "depth": 1,
+  "length": 14,
+  "type": "terrainrefreshed:stream",
+  "water": {
+    "id": "minecraft:water",
+    "properties": {
+      "level": "0"
+    }
+  },
+  "width": 2
+}
