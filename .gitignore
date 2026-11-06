@@ -43,3 +43,7 @@ replay_*.log
 
 __pycache__/
 *.pyc
+
+# the 1.21.1 port lives in its own project with its own git history
+
+terrainrefreshed-1.21.1/
