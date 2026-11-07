@@ -25,9 +25,10 @@ import net.minecraft.world.level.levelgen.feature.Feature;
  *
  * The vanilla tree feature builds a straight trunk plus a single foliage blob, which reads as a
  * stick with a pompom. This one asks its form for the logs and leaves, then only takes care of the
- * bookkeeping the game insists on: the trunk and limb blocks go down first, and every leaf keeps
- * the distance value the game computes from the real log positions, so the foliage does not decay
- * away once the tree is generated.
+ * bookkeeping the game insists on: the trunk and limb blocks go down first, and every leaf is
+ * given the distance the game would measure from the real log positions, with the leaves that reach
+ * past the range the game supports planted as persistent, so the foliage does not decay away while
+ * the tree still stands.
  */
 public record FancyTreeFeature(
 	BlockState trunk,
@@ -52,7 +53,13 @@ public record FancyTreeFeature(
 			.apply(i, FancyTreeFeature::new)
 	);
 
-	private static final int MAX_LEAF_DISTANCE = 7;
+	/**
+	 * The furthest a leaf may sit from a log and still be kept by the game.
+	 *
+	 * The game measures every leaf against the nearest log and lets a leaf rot once that distance
+	 * reaches seven, so anything from six outwards is already beyond what the game supports.
+	 */
+	private static final int MAX_SUPPORTED_DISTANCE = 6;
 	private static final int PLACEMENT_FLAGS = 2;
 
 	@Override
@@ -89,7 +96,16 @@ public record FancyTreeFeature(
 			BlockState state = entry.getValue();
 
 			if (state.hasProperty(BlockStateProperties.DISTANCE)) {
-				state = state.setValue(BlockStateProperties.DISTANCE, distance);
+				// The game keeps its own distance and lets a leaf rot once it reaches seven, so a
+				// canopy that reaches further than six has to be planted as persistent leaves, the
+				// way the game treats leaves that belong to a structure.
+				boolean supported = distance <= MAX_SUPPORTED_DISTANCE;
+
+				state = state.setValue(BlockStateProperties.DISTANCE, supported ? distance : MAX_SUPPORTED_DISTANCE);
+
+				if (!supported && state.hasProperty(BlockStateProperties.PERSISTENT)) {
+					state = state.setValue(BlockStateProperties.PERSISTENT, true);
+				}
 			}
 
 			level.setBlock(entry.getKey(), state, PLACEMENT_FLAGS);
@@ -110,10 +126,6 @@ public record FancyTreeFeature(
 		while (!queue.isEmpty()) {
 			BlockPos pos = queue.poll();
 			int distance = distances.get(pos);
-
-			if (distance >= MAX_LEAF_DISTANCE) {
-				continue;
-			}
 
 			for (Direction direction : Direction.values()) {
 				BlockPos neighbour = pos.relative(direction);

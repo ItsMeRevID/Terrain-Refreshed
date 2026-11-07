@@ -948,7 +948,7 @@ def feature_json(tree):
         "trunk": {"id": tree["log"], "properties": {"axis": "y"}},
         "leaves": {
             "id": tree["leaves"],
-            "properties": {"distance": "7", "persistent": "false", "waterlogged": "false"},
+            "properties": {"distance": "6", "persistent": "false", "waterlogged": "false"},
         },
         "form": tree["form"],
         "min_height": tree["height"][0],

@@ -5,7 +5,7 @@
   "leaves": {
     "id": "minecraft:spruce_leaves",
     "properties": {
-      "distance": "7",
+      "distance": "6",
       "persistent": "false",
       "waterlogged": "false"
     }
