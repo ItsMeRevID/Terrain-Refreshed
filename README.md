@@ -9,6 +9,9 @@ A Fabric mod that overhauls Minecraft's world generation: realistic terrain shap
 mountains, flowing streams and rivers, 100 new biomes with hand-tuned colours, natural vegetation
 and organically grown fancy trees.
 
+This is the Minecraft 26.3 build. The Minecraft 1.21.1 - 1.21.11 build lives in
+[ItsMeRevID/Terrain-Refreshed-1.21.1](https://github.com/ItsMeRevID/Terrain-Refreshed-1.21.1).
+
 | | |
 |---|---|
 | Author | RevSkyMC |
